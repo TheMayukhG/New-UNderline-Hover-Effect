@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #121810;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.btn{
+    color: white;
+    font-size: 22px;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn::after{
+    content: '';
+    position: absolute;
+    background: rgb(255, 255, 255);
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+
+.btn:hover::after{
+    left: -25%;
+    width: 150%;
+}
+.btn:not(:hover)::after{
+    width: 0;
+    right: -25%;
+}
